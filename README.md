@@ -1,9 +1,8 @@
-# Setting up a Data Lake on S3 for Sparkify
+# Set up a Data Lake on S3 for Sparkify
 #### Creation of the Data Lake on AWS S3 using Spark
 
-
 ### Purpose:
-We will be creating a Data Lake on AWS S3 for Sparkify app using the Event Log and Song files stored on S3. The source files are in JSON format and we will read and process the files using Spark. The Data Lake will have a set of parquet tables having fact and dimension information. The tables will be useful for sparkify to analyze their data in a more effective way which will in turn help them to make better business decisions. It will help them to understand user's taste in songs, their choice and listening pattern and utlizing those analytics, Sparkiy will be able to provide more quality service and gain their user base.
+Create a Data Lake on AWS S3 for Sparkify app using the Event Log and Song files stored on S3. The source files are in JSON format and we will read and process the files using Spark. The Data Lake will have a set of parquet tables having fact and dimension information. The tables will be useful for sparkify to analyze their data in a more effective way which will in turn help them to make better business decisions. It will help them to understand user's taste in songs, their choice and listening pattern and utlizing those analytics, Sparkfiy will be able to provide more quality service and gain their user base.
 
 ### Source File Information:
 There are 2 different types of Data (Event log files and Song files) that is available for the Sparkify music streaming application amd they are stored as JSON files. Following are the paths for the files:
@@ -63,12 +62,11 @@ Here are the steps taken to create the Sparkify data lake:
 - Create a new IAM role
     - Create a new IAM role and assign AmazonS3FullAccess policy to the same. Get the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY for this role and same the data data in dl.cfg.
 - Create a new S3 bucket 
-    - Create a S3 bucket in your profile which will be used to write back the parquet files. Give public access to the S3 bucket.
+    - Create a S3 bucket in personal profile which will be used to write back the parquet files.
     
-    <img src="/resource/S3Datalake.PNG">
-    
+
 - Data Flow:
-  <img src="/resource/dataflow.jpg">
+Source Files (udacity S3 bucket) (Song Files, Log Files) --> Extract, Transform, Load --> DIM/FACT table files (personal S3 bucket) (song, artist, songplays, users, time)
   
 - Write a python file for ETL process
     - Create a Spark session
